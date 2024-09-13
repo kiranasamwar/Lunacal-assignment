@@ -1,0 +1,127 @@
+/* General tab styles */
+.info-tabs {
+  width: 90%;
+  max-width: 657px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #333131;
+  border-radius: 8px;
+  height: 38vh;
+  flex-shrink: inherit;
+}
+
+/* Tab header */
+.tab-header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows tabs to wrap on smaller screens */
+  box-shadow: 5.67px 5.67px 5.67px 5.67px #00000066;
+  padding: 10px;
+  border-radius: 20px;
+  background: #171717;
+
+}
+
+/* Default styles for buttons */
+.tab-header button {
+  background-color: transparent;
+  color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  margin: 5px 0; /* Margin for better spacing on smaller screens */
+  flex-grow: 1; /* Allows buttons to stretch evenly across the row */
+  flex-basis: calc(33.333% - 10px); /* Makes buttons take up a third of the row on larger screens */
+  text-align: center; /* Center align button text */
+}
+
+/* Hover effect for buttons */
+.tab-header button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4.96px 12.4px 2.48px #00000040 inset;
+
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.tab-header button:hover::before {
+  left: 0;
+}
+
+.tab-header button:hover {
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+
+}
+
+/* Active tab styles */
+.tab-header .active {
+  background-color: #00000040;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 20px; /* Keep padding consistent to prevent shrinking */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 20px;
+  
+}
+
+/* Ensure the active state doesn't shrink the button */
+.tab-header .active::before {
+  left: 0;
+}
+
+/* Tab content styling */
+.tab-content {
+  background-color: #2A2C2F;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-tabs{
+    width: 90%;
+    height: auto;
+    height: 53vh;
+  }
+  .tab-header button {
+    flex-basis: 100%; /* Each button takes full width on smaller screens */
+    margin-bottom: 10px; /* Add space between buttons on smaller screens */
+    font-size: 14px; /* Smaller font size for better readability on small screens */
+  }
+
+  .tab-content {
+    padding: 15px;
+    font-size: 14px; /* Adjust content font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-header button {
+    padding: 8px 12px; /* Smaller padding for very small screens */
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  .tab-content {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .info-tabs{
+    width: 90%;
+  }
+}

@@ -1,0 +1,152 @@
+/* Gallery Container */
+.gallery-container {
+  overflow: hidden;
+  position: relative;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  height: 38vh;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/* Gallery Header */
+.gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensures header items wrap on smaller screens */
+}
+
+/* Add Image Button Styles */
+.add-image-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 10px;
+  margin-left: 200px;
+
+}
+
+.add-image-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Updated Arrow Container */
+.arrows-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 10px; /* Space between arrows */
+}
+
+/* Arrow Styles to Match Image */
+.gallery-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: #b2b2b2;
+  background-color: #2d2f36;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.7); /* Subtle glow and shadow */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.gallery-arrow:hover {
+  background-color: #444; /* Slight color change on hover */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.9); /* Enhanced shadow on hover */
+}
+
+/* Gallery Grid for Images */
+.gallery-grid {
+  display: flex;
+  overflow: hidden; /* Hides overflow and scrollbar */
+  margin-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+/* Individual Gallery Images */
+.gallery-image {
+  width: 190px;
+  height: 179px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  margin-right: 15px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.gallery-image:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Gallery Title */
+.gallery-text {
+  background: #171717;
+  box-shadow: 0px 4px 10px 2px #00000040 inset;
+  color: white;
+  border-radius: 10px;
+  margin: 0;
+  padding: 10px 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .gallery-container{
+    height: 100%;
+    margin-left: 0px;
+    width: 94%;
+    margin-right: 0px;
+  }
+  .gallery-header {
+    flex-direction: column; /* Stacks header items */
+    align-items: center;
+  }
+
+  .gallery-text,
+  .add-image-button,
+  .arrows-container {
+    margin-bottom: 15px; /* Adds space for smaller screens */
+  }
+  .add-image-button{
+    margin-left: 0px;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .add-image-button{
+    margin-left: 0px;
+
+  }
+  .gallery-grid {
+    justify-content: center; /* Centers images in smaller viewport */
+  }
+
+  .gallery-image {
+    width: 100x;
+    height: 100px;
+    margin: 5px; /* Reduces space between images */
+  }
+
+  .gallery-container {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+}
